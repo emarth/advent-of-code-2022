@@ -12,17 +12,17 @@ where P: AsRef<Path>, {
 fn make_list(filename: &str, list: &mut Vec<i32>) {
 
     if let Ok(lines) = read_lines(filename) {
-    let mut sum = 0;
-    for line in lines {
-        let l = line.unwrap();
-        if l.len() >= 1 {
-            sum = sum + l.parse::<i32>().unwrap(); // adds up calories for each elf
-        } else {
-            list.push(sum);
-            sum = 0;
+        let mut sum = 0;
+        for line in lines {
+            let l = line.unwrap();
+            if l.len() >= 1 {
+                sum = sum + l.parse::<i32>().unwrap(); // adds up calories for each elf
+            } else {
+                list.push(sum);
+                sum = 0;
+            }
         }
     }
-}
 }
 
 
